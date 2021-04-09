@@ -23,7 +23,8 @@ and open the template in the editor.
             $db = new DatabaseOOP("localhost:3306", "root", "1234", "segundo");
             $db->connect();
             echo "<p>Connected successfully</p>";
-            $last_record = $db->insert(ModalitatEnum::HUMA, 1, 5);
+            
+            $last_record = $db->insert(ModalitatEnum::HUMA, 1 ,5);
             echo "<p>Registre $last_record inserit correctament</p>";
             echo "<h2>Estadístiques</h2>";
             echo DatabaseProc::TABLE_START;

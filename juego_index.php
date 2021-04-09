@@ -27,10 +27,7 @@ and open the template in the editor.
                 <input type="radio" id="female" name="nivel" value= "100" required>
                 <label for="tres">NIVEL 3</label><br><br><br>
                 <input type="submit" value="Submit">
+            
          </form> 
-        
-        <form action="./mysql_index.php" method="post">
-            <input type="submit" value="Mostrar Estadisticas" />
-        </form>
     </body>
 </html>

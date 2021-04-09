@@ -29,7 +29,8 @@ class DatabaseOOP extends DatabaseConnection {
     }
 
     public function insert($modalitat, $nivell, $intents): int {
-        $sql = "INSERT INTO estadistiques (modalitat, nivell, intents) VALUES ('".$modalitat . "','". $nivell ."','". $intents . "')";
+       $sql = "INSERT INTO estadistiques (modalitat, nivell, intents) VALUES ('".$modalitat . "','". $nivell ."','". $intents . "')";
+        //$sql = "delete from estadistiques";
 
         if ($this->connection->query($sql) === TRUE) {
             $sql = "SELECT max(id) FROM estadistiques";

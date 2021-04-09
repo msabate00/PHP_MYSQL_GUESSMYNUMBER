@@ -1,9 +1,15 @@
 <?php
 session_start();
+include_once 'DatabasePDO.php';
+include_once 'DatabaseProc.php';
+include_once 'DatabaseOOP.php';
+include_once 'EstadistiquesRow.php';
 class Maquina{
     
     private $random = 0;
     private $mist = array();
+    
+    private $intentos;
     
     private $rango;
     public $mode;
@@ -13,6 +19,7 @@ class Maquina{
      function __construct($max, $mode) {
         $this->rango = $max;
         $this->mode = $mode;
+        $this->intentos = 0;
         $this->primer = true;
         if($mode == "jugador"){
             $this->generarRandom($this->rango);   
@@ -30,6 +37,7 @@ class Maquina{
         return $this->random;
     }
     public function paso($dado){
+        $this->intentos++;
      $s;
         if($this->mode == "jugador"){
             if($this->random < $dado){
@@ -40,6 +48,21 @@ class Maquina{
                 $this->mostrarForm();
            }else{
                $s = "¡HAS ENCERTADO!";
+               
+                $db = new DatabaseOOP("localhost:3306", "root", "1234", "segundo");
+                $db->connect();
+                
+                if($this->rango == 10){
+                    $db->insert(ModalitatEnum::HUMA, 1 , $this->intentos);
+                }elseif ($this->rango == 50){
+                    $db->insert(ModalitatEnum::HUMA, 2 , $this->intentos);
+                    
+                } elseif ($this->rango == 100){
+                    $db->insert(ModalitatEnum::HUMA, 3 , $this->intentos);
+                }
+                
+                
+               
                $this->mostrarVolver();
            }
         }else{

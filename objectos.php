@@ -49,17 +49,9 @@ class Maquina{
            }else{
                $s = "¡HAS ENCERTADO!";
                
-                $db = new DatabaseOOP("localhost:3306", "root", "1234", "segundo");
-                $db->connect();
+               $this->guardar();
                 
-                if($this->rango == 10){
-                    $db->insert(ModalitatEnum::HUMA, 1 , $this->intentos);
-                }elseif ($this->rango == 50){
-                    $db->insert(ModalitatEnum::HUMA, 2 , $this->intentos);
-                    
-                } elseif ($this->rango == 100){
-                    $db->insert(ModalitatEnum::HUMA, 3 , $this->intentos);
-                }
+               
                 
                 
                
@@ -97,6 +89,7 @@ class Maquina{
     }
     
     public function puntoMedio(){
+        $this->intentos++;
         if($this->mist[0] == 0){
             $this->mist[0] = $this->rango/2;
             $this->mist[1] = $this->rango;
@@ -136,7 +129,7 @@ class Maquina{
                 echo ' <input type="submit" value="Probar">';
                 echo '</form>';
                 echo '</form>';
-                echo  '<form action="./index.php" method="post">';
+                echo  '<form action="./acertadoMaquina.php" method="post">';
                 echo ' <input type="submit" value="Acertado">';
                 echo '</form>';
         
@@ -151,6 +144,41 @@ class Maquina{
     public function setPrimer(){
         $this->primer = false;
        // $_SESSION['maquina'] = serialize($this);
+    }
+    
+    public function guardar(){
+         $db = new DatabaseOOP("localhost:3306", "root", "1234", "segundo");
+         $db->connect();
+         
+         
+         if($this->mode == "jugador"){
+             
+              if($this->rango == 10){
+                        $db->insert(ModalitatEnum::HUMA, 1 , $this->intentos);
+
+              }elseif ($this->rango == 50){
+                        $db->insert(ModalitatEnum::HUMA, 2 , $this->intentos);
+
+              } elseif ($this->rango == 100){
+                        $db->insert(ModalitatEnum::HUMA, 3 , $this->intentos);
+              }
+         }else{
+            if($this->rango == 10){
+                        $db->insert(ModalitatEnum::MAQUINA, 1 , $this->intentos);
+
+              }elseif ($this->rango == 50){
+                        $db->insert(ModalitatEnum::MAQUINA, 2 , $this->intentos);
+
+              } elseif ($this->rango == 100){
+                        $db->insert(ModalitatEnum::MAQUINA, 3 , $this->intentos);
+              }
+             
+             
+         }
+         
+         
+        
+        
     }
     
 }

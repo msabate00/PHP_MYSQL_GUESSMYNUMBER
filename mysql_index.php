@@ -24,8 +24,8 @@ and open the template in the editor.
             $db->connect();
             echo "<p>Connected successfully</p>";
             
-            $last_record = $db->insert(ModalitatEnum::HUMA, 1 ,5);
-            echo "<p>Registre $last_record inserit correctament</p>";
+            //$last_record = $db->insert(ModalitatEnum::HUMA, 1 ,5);
+            //echo "<p>Registre $last_record inserit correctament</p>";
             echo "<h2>Estadístiques</h2>";
             echo DatabaseProc::TABLE_START;
             $stmt = $db->selectAll();

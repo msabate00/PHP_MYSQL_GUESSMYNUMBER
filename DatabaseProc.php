@@ -49,6 +49,28 @@ class DatabaseProc extends DatabaseConnection {
         }
     }
     
+    public function delete($id) {
+        $sql = "DELETE FROM estadistiques WHERE id=".$id;
+        if ($this->connection != null) {
+            $result = mysqli_query($this->connection, $sql);
+        }
+    }
+
+    public function findById($id) {
+        $sql = "SELECT * FROM estadistiques WHERE id =" . $id;
+        $result = mysqli_query($this->connection, $sql);
+        
+        return $result;
+    }
+
+     public function update(\estadistica $estadistica) {
+        
+        $sql = "UPDATE estadistiques SET modalitat ='".$estadistica->modalitat."',nivell='".$estadistica->nivell."', data_partida='".$estadistica->data."',intents='".$estadistica->intents."' WHERE id=". $estadistica->id;
+        if ($this->connection != null) {
+            $result = mysqli_query($this->connection, $sql);
+        }
+    }
+            
     function showAll($stmt){
         for($i = 0; $i<count($stmt); $i++){
             echo "<tr>";

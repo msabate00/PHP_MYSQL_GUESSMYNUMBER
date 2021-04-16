@@ -23,6 +23,12 @@ interface DB {
     public function selectAll();
     // function delete($id): void;
     // ...
+    
+       public function delete($id);
+    
+    public function update(estadistica $estadistica);
+    
+    public function findById($id);
 }
 
 

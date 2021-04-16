@@ -147,7 +147,7 @@ class Maquina{
     }
     
     public function guardar(){
-         $db = new DatabaseOOP("localhost:3306", "root", "1234", "segundo");
+         $db = new DatabaseOOP("localhost:3306", "root", "1234", "m07uf3");
          $db->connect();
          
          

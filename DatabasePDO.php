@@ -58,6 +58,28 @@ class DatabasePDO extends DatabaseConnection {
             }
         
     }
+    
+    public function delete($id) {
+        $stmt = $this->connection->prepare("DELETE FROM estadistiques WHERE id = :id");
+        $stmt->bindParam(':id',$id);
+        $stmt->execute();
+        
+    }
+
+    public function findById($id) {
+        $stmt = $this->connection->prepare("SELECT * FROM estadistiques WHERE id = :id");
+        $stmt->bindParam(':id',$id);
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        
+        return $stmt;
+    }
+
+    public function update(\estadistica $estadistica) {
+        //UPDATE t1 SET col1 = col1 + 1, col2 = col1;
+        $stmt = $this->connection->prepare("UPDATE estadistiques SET modalitat ='".$estadistica->modalitat."',nivell='".$estadistica->nivell."', data_partida='".$estadistica->data."',intents='".$estadistica->intents."' WHERE id=". $estadistica->id);
+        $stmt->execute();
+    }
 
 }
 

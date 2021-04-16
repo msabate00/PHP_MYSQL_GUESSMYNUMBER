@@ -10,6 +10,8 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+        <p>Volver al Menu Anterior: <a href="index.php">Volver</a></p>
+        
         <?php
        
         include_once 'DatabasePDO.php';
@@ -19,8 +21,8 @@ and open the template in the editor.
         $db = null;
         try {
             echo "<h1>PHP MySQL</h1>";
-            echo "<h2>Inserció</h2>";
-            $db = new DatabaseOOP("localhost:3306", "root", "1234", "segundo");
+           // echo "<h2>Inserció</h2>";
+            $db = new DatabaseOOP("localhost:3306", "root", "1234", "m07uf3");
             $db->connect();
             echo "<p>Connected successfully</p>";
             

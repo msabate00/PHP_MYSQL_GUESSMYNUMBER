@@ -76,6 +76,16 @@ class DatabaseOOP extends DatabaseConnection {
     public function findById($id) {
         $sql = "SELECT * FROM estadistiques WHERE id =" . $id;
         $result = $this->connection->query($sql, MYSQLI_USE_RESULT);
+        
+        if($result == TRUE){
+           $r = $result->fetch_all();
+           return $r[0];
+        }else{
+            echo $sql;
+             var_dump($result);
+        }
+        
+       
         return $result;
         
     }

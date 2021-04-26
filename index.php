@@ -45,14 +45,27 @@ and open the template in the editor.
                 <tr>
                     <td>Update:</td>
                     <td><input type="number" placeholder="id" name="id3"></td>
-                    <td><input type="text" placeholder="Modalitat" name="moda"></td>
+                    <td>
+                        <select name="moda">
+                            <option value="HUMA">HUMA</option>
+                            <option value="MAQUINA">MAQUINA</option>
+                        </select>
+                    </td>
                     <td><input type="number" placeholder="Nivell" name="nivell" max="3" min="1"></td>
-                    <td><input type="datetime" placeholder="Data" name="date"></td>
-                    <td><input type="number" placeholder="id" name="intents" min="1"></td>
+                    <td><input type="date" placeholder="Data" name="date"></td>
+                    <td><input type="number" placeholder="Intents" name="intents" min="1"></td>
                     <td><input type="submit" value="Ejecutar" formaction="./updateFunction.php"></td>
                 </tr>
-                
             </table>
         </form>
+        <br><br>
+        <form action="credits.php">
+    <input type="submit" value="Credits" />
+</form>
+               
+        
+        
+        
+        
     </body>
 </html>

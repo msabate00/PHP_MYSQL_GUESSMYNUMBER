@@ -15,7 +15,7 @@ for($i = 0; $i<count($l); $i++){
 }
 
 echo "</tr></table>";
- echo '<p>Volver al Menu Anterior: <a href="index.php">Volver</a></p>';
+ echo '<p>Volver al Menu Anterior: <a href="mysql_index.php">Volver</a></p>';
 
 /* 
  * To change this license header, choose License Headers in Project Properties.

@@ -31,7 +31,7 @@ and open the template in the editor.
         
         <form action="./mysql_index.php" method="post">
             <input type="submit" value="Mostrar Estadisticas" />
-            <table>
+         <!--   <table>
                 <tr>
                     <td>Delete:</td>
                     <td><input type="number" placeholder="id" name="id"></td>
@@ -56,8 +56,8 @@ and open the template in the editor.
                     <td><input type="number" placeholder="Intents" name="intents" min="1"></td>
                     <td><input type="submit" value="Ejecutar" formaction="./updateFunction.php"></td>
                 </tr>
-            </table>
-        </form>
+            </table>-->
+        </form> 
         <br><br>
         <form action="credits.php">
     <input type="submit" value="Credits" />

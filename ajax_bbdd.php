@@ -2,12 +2,12 @@
 <html>
     <head>
         <style>
-            table {
+            #ta {
                 width: 100%;
                 border-collapse: collapse;
             }
 
-            table, td, th {
+            #ta, #ta td, #ta #th {
                 border: 1px solid black;
                 padding: 5px;
             }
@@ -33,7 +33,7 @@
         
         $result = mysqli_query($con, $sql);
 
-        echo "<table>
+        echo "<table id='ta'>
 <tr>
 <th>Id</th>
 <th>Modalitat</th>

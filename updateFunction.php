@@ -9,6 +9,6 @@ $db->connect();
 $db->update(new estadistica($_POST['id3'], $_POST['moda'], $_POST['nivell'], $_POST['date'], $_POST['intents']));
 
 sleep(1.5);
-header("Location: ./index.php");
+header("Location: ./mysql_index.php");
 
 ?>

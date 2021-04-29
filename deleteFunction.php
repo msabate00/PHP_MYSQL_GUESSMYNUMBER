@@ -8,7 +8,7 @@ $db->connect();
 $db->delete($_POST["id"]);
 
 sleep(1.5);
-header("Location: ./index.php");
+header("Location: ./mysql_index.php");
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates

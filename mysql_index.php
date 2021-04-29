@@ -9,6 +9,11 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title></title>
         <script>
+            window.onload = function () {
+                showDataBase("ninguno");
+            };
+
+
             function showDataBase(str) {
                 if (str === "") {
                     document.getElementById("txtHint").innerHTML = "";
@@ -51,6 +56,34 @@ and open the template in the editor.
             }
             echo "</select>";
             ?>
+            <form action="./mysql_index.php" method="post">
+                <table>
+                    <tr>
+                        <td>Delete:</td>
+                        <td><input type="number" placeholder="id" name="id"></td>
+                        <td><input type="submit" value="Ejecutar" formaction="./deleteFunction.php"></td>
+                    </tr>
+                    <tr>
+                        <td>FindById:</td>
+                        <td><input type="number" placeholder="id" name="id2"></td>
+                        <td><input type="submit" value="Ejecutar" formaction="./findFunction.php"></td>
+                    </tr>
+                    <tr>
+                        <td>Update:</td>
+                        <td><input type="number" placeholder="id" name="id3"></td>
+                        <td>
+                            <select name="moda">
+                                <option value="HUMA">HUMA</option>
+                                <option value="MAQUINA">MAQUINA</option>
+                            </select>
+                        </td>
+                        <td><input type="number" placeholder="Nivell" name="nivell" max="3" min="1"></td>
+                        <td><input type="date" placeholder="Data" name="date"></td>
+                        <td><input type="number" placeholder="Intents" name="intents" min="1"></td>
+                        <td><input type="submit" value="Ejecutar" formaction="./updateFunction.php"></td>
+                    </tr>
+                </table>
+            </form>
 
 
             <?php

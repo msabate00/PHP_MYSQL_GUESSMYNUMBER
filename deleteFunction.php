@@ -7,6 +7,8 @@ $db = new DatabaseOOP("localhost:3306", "root", "1234", "m07uf3");
 $db->connect();
 $db->delete($_POST["id"]);
 
+sleep(1.5);
+header("Location: ./index.php");
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates

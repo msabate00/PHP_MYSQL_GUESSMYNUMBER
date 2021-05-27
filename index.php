@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+CREATE TABLE `estadistiques` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `modalitat` varchar(32) NOT NULL,
+  `nivell` int(2) DEFAULT 1,
+  `data_partida` datetime DEFAULT current_timestamp(),
+  `intents` int(11) DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=latin1;.
 -->
 <html>
     <head>
